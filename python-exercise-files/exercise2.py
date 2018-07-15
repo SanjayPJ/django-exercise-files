@@ -1,7 +1,3 @@
-#####################################
-#### PART 9: FUNCTION EXERCISES #####
-#####################################
-
 
 # Complete the tasks below by writing functions! Keep in mind, these can be
 # really tough, its all about breaking the problem down into smaller, logical
