@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>User</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+        </tr>
+        {% for i in form_data %}
+        <tr>
+            <td>{{ i.name }}</td>
+            <td>{{ i.email }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
