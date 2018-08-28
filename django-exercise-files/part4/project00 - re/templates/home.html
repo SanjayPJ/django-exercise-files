@@ -1,0 +1,16 @@
+<!doctype html>
+
+{% extends 'base.html' %}
+
+{% block body_block %}
+    <h3 class="text-center">WELCOME HOME!!!</h3>
+    <div class="mt-5 text-center">
+        <p>goto <a href="{% url 'http_resp' %}">http_resp</a></p>
+        <p>goto <a href="{% url 'app00:home' %}">app00</a></p>
+        <p>goto <a href="{% url 'admin:index' %}">admin</a></p>
+        <p>goto <a href="{% url 'form_controller' %}">form_controller</a></p>
+        <p>goto <a href="{% url 'model_controller' %}">model_controller</a></p>
+        <p>goto <a href="{% url 'model_form' %}">model_form</a></p>
+    </div>
+{% endblock body_block %}
+    
