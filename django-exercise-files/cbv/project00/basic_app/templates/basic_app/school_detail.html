@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+
+{% block body_block %}
+    <h4>WELCOME TO THE LIST OF ALL SCHOOLS</h4>
+    <p>Name : {{ school_details.name }}</p>
+    <p>Principal : {{ school_details.principal }}</p>
+    <p>Location : {{ school_details.location }}</p>
+
+    <h6>STUDENTS</h6>
+    
+    {% for student in school_details.students.all %}
+        <p>{{ student.name }} who is {{ student.age }} years old.</p>
+    {% endfor %}
+            
+{% endblock body_block %}
+    
