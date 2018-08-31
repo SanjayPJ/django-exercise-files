@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block body_block %}
+    <h1 class="text-center text-uppercase mt-2">{{ header }}</h1>
+    <table class="table mt-2">
+        <thead>
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">School Name</th>
+            <th scope="col">Principal</th>
+            <th scope="col">Location</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for school in school_list %}
+          <tr>
+            <th>{{ school.pk }}</th>
+            <td><a href="{{ school.pk }}">{{ school.name }}</a></td>
+            <td>{{ school.principal }}</td>
+            <td>{{ school.location }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+{% endblock body_block %}
+    

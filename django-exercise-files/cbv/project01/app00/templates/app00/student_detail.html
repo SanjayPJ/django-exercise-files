@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block body_block %}
+    <h1 class="text-center text-uppercase mt-2">{{ student.name }} {{ header }}</h1>
+    <div class="alert alert-success" role="alert">
+      <p class="mt-2"><b>Student Name :</b> {{ student.name }}</p>
+      <p><b>Age:</b> {{ student.age }}</p>
+      <p><b>School:</b> {{ student.school }}</p>
+    </div>
+    
+    <a href="{% url 'update-student' pk=student.pk %}" class="text-white btn btn-warning mb-2 w-100">Update</a>
+    <a href="{% url 'delete-student' pk=student.pk %}" class="text-white btn btn-danger w-100">Delete</a>
+{% endblock body_block %}
+    

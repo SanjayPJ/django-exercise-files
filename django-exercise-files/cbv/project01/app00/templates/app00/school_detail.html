@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block body_block %}
+    <h1 class="text-center text-uppercase mt-2">{{ school.name }} {{ header }}</h1>
+    <div class="alert alert-success" role="alert">
+      <p class="mt-2"><b>School Name :</b> {{ school.name }}</p>
+      <p><b>School Principal:</b> {{ school.principal }}</p>
+      <p><b>School Location:</b> {{ school.location }}</p>
+    </div>
+    <p><b>Students List</b></p>
+    <table class="table mt-2">
+        <thead>
+            <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Student Name</th>
+            <th scope="col">Age</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for student in school.students.all %}
+            <tr>
+            <th>{{ student.pk }}</th>
+            <td>{{ student.name }}</td>
+            <td>{{ student.age }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <a href="{% url 'update-school' pk=school.pk %}" class="text-white btn btn-warning mb-2 w-100">Update</a>
+    <a href="{% url 'delete-school' pk=school.pk %}" class="text-white btn btn-danger w-100">Delete</a>
+{% endblock body_block %}
+    

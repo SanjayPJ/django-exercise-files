@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block body_block %}
+
+    {% if form.instance.pk %}
+    <h1 class="text-center text-uppercase mt-2">{{ update_header }}</h1>
+    {% else %}
+    <h1 class="text-center text-uppercase mt-2">{{ create_header }}</h1>
+    {% endif %}
+    <form method="post">{% csrf_token %}
+        {{ form.as_p }}
+        {% csrf_token %}
+        <script>
+            $("input").addClass("form-control")
+            $("select").addClass("form-control")
+        </script>
+        <input type="submit" value="Save" class="btn btn-primary w-100">
+    </form>
+{% endblock body_block %}
+    
